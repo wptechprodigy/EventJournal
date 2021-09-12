@@ -12,6 +12,7 @@
 		0404CA6426EE12FD00156973 /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0404CA6326EE12FD00156973 /* UIFont+Extensions.swift */; };
 		0404CA6626EE1A7800156973 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0404CA6526EE1A7800156973 /* UIView+Extensions.swift */; };
 		0404CA6926EE2A7F00156973 /* EventsListViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0404CA6826EE2A7F00156973 /* EventsListViewController+Extensions.swift */; };
+		0404CA6B26EE7D7900156973 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0404CA6A26EE7D7900156973 /* Date+Extensions.swift */; };
 		04D34E2326E19E08001BD8AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D34E2226E19E08001BD8AC /* AppDelegate.swift */; };
 		04D34E2526E19E08001BD8AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D34E2426E19E08001BD8AC /* SceneDelegate.swift */; };
 		04D34E2726E19E08001BD8AC /* EventsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D34E2626E19E08001BD8AC /* EventsListViewController.swift */; };
@@ -42,6 +43,7 @@
 		0404CA6326EE12FD00156973 /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
 		0404CA6526EE1A7800156973 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		0404CA6826EE2A7F00156973 /* EventsListViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventsListViewController+Extensions.swift"; sourceTree = "<group>"; };
+		0404CA6A26EE7D7900156973 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		04D34E1F26E19E08001BD8AC /* EventsJournal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventsJournal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D34E2226E19E08001BD8AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04D34E2426E19E08001BD8AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 				04D34E6526E7B6C6001BD8AC /* UITableViewCell+Extensions.swift */,
 				0404CA6326EE12FD00156973 /* UIFont+Extensions.swift */,
 				0404CA6526EE1A7800156973 /* UIView+Extensions.swift */,
+				0404CA6A26EE7D7900156973 /* Date+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -442,6 +445,7 @@
 				0404CA6226EE0F6200156973 /* EventCell.swift in Sources */,
 				04D34E5026E293FD001BD8AC /* CoreDataManager.swift in Sources */,
 				04D34E6426E7B09C001BD8AC /* TitleSubtitleCellViewModel.swift in Sources */,
+				0404CA6B26EE7D7900156973 /* Date+Extensions.swift in Sources */,
 				04D34E4626E233D4001BD8AC /* UIViewController+Extensions.swift in Sources */,
 				04D34E2526E19E08001BD8AC /* SceneDelegate.swift in Sources */,
 				04D34E5B26E2EFCF001BD8AC /* AddEventCoordinator.swift in Sources */,

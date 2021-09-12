@@ -11,10 +11,7 @@ final class EventCell: UITableViewCell {
     
     // MARK: - PROPERTIES
     
-    private let yearLabel = UILabel()
-    private let monthLabel = UILabel()
-    private let weekLabel = UILabel()
-    private let dayLabel = UILabel()
+    private var timeRemainingStrings = [UILabel(), UILabel(), UILabel(), UILabel()]
     private let emptyView = UIView()
     private let dateLabel = UILabel()
     
@@ -40,18 +37,14 @@ final class EventCell: UITableViewCell {
     // MARK: - HELPER METHODS
     
     private func setupViewElements() {
-        [yearLabel, monthLabel, weekLabel, dayLabel, dateLabel, eventNameLabel, backgroundImageView, verticalStackView].forEach {
+        (timeRemainingStrings + [dateLabel, eventNameLabel, backgroundImageView, verticalStackView]).forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
         
-        for label in [
-            yearLabel,
-            monthLabel,
-            weekLabel,
-            dayLabel,
+        for label in (timeRemainingStrings + [
             dateLabel,
             eventNameLabel
-        ] {
+        ]) {
             
             switch label {
             case dateLabel:
@@ -59,7 +52,7 @@ final class EventCell: UITableViewCell {
             case eventNameLabel:
                 label.font = .makeFont(ofSize: 26, fontWeight: .bold)
             default:
-                label.font = .makeFont(ofSize: 24, fontWeight: .medium)
+                label.font = .makeFont(ofSize: 26, fontWeight: .medium)
             }
             
             label.textColor = .white
@@ -74,14 +67,7 @@ final class EventCell: UITableViewCell {
         contentView.addSubview(verticalStackView)
         contentView.addSubview(eventNameLabel)
         
-        [
-            yearLabel,
-            monthLabel,
-            weekLabel,
-            dayLabel,
-            emptyView,
-            dateLabel
-        ].forEach {
+        (timeRemainingStrings + [emptyView, dateLabel]).forEach {
             verticalStackView.addArrangedSubview($0)
         }
     }
@@ -101,10 +87,9 @@ final class EventCell: UITableViewCell {
     }
     
     func update(with viewModel: EventCellViewModel) {
-        yearLabel.text = viewModel.yearText
-        monthLabel.text = viewModel.monthText
-        weekLabel.text = viewModel.weekText
-        dayLabel.text = viewModel.dayText
+        viewModel.timeRemainingStrings.enumerated().forEach {
+            timeRemainingStrings[$0.offset].text = $0.element
+        }
         dateLabel.text = viewModel.dateText
         eventNameLabel.text = viewModel.eventNameText
         backgroundImageView.image = viewModel.backgroundImage

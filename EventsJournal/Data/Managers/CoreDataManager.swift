@@ -10,6 +10,8 @@ import CoreData
 
 final class CoreDataManager {
     
+    static let shared = CoreDataManager()
+    
     lazy var persistenceContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "EventsJournal")
         container.loadPersistentStores { (_, error) in
@@ -33,10 +35,8 @@ final class CoreDataManager {
         event.setValue(imageData, forKey: "image")
         
         do {
-            
             try managedObjectContext.save()
         } catch {
-            
             print(error.localizedDescription)
         }
     }
@@ -44,12 +44,10 @@ final class CoreDataManager {
     func fetchEvents() -> [Event] {
         
         do {
-            
             let fetchRequest = NSFetchRequest<Event>(entityName: "Event")
             let events = try managedObjectContext.fetch(fetchRequest)
             return events
         } catch {
-            
             print(error.localizedDescription)
             return []
         }
