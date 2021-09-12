@@ -92,6 +92,9 @@ final class EventCell: UITableViewCell {
         }
         dateLabel.text = viewModel.dateText
         eventNameLabel.text = viewModel.eventNameText
-        backgroundImageView.image = viewModel.backgroundImage
+        
+        viewModel.loadImage { [weak self] image in
+            self?.backgroundImageView.image = image
+        }
     }
 }
