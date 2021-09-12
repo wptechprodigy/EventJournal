@@ -35,10 +35,8 @@ final class CoreDataManager {
         event.setValue(imageData, forKey: "image")
         
         do {
-            
             try managedObjectContext.save()
         } catch {
-            
             print(error.localizedDescription)
         }
     }
@@ -46,12 +44,10 @@ final class CoreDataManager {
     func fetchEvents() -> [Event] {
         
         do {
-            
             let fetchRequest = NSFetchRequest<Event>(entityName: "Event")
             let events = try managedObjectContext.fetch(fetchRequest)
             return events
         } catch {
-            
             print(error.localizedDescription)
             return []
         }
