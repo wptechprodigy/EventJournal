@@ -20,11 +20,20 @@ final class EventsListViewModel {
     
     private(set) var cells: [Cell] = []
     var onUpdate = {}
+    private let coreDataManager: CoreDataManager
     
     // MARK: - INITIALIZERS
     
+    init(coreDataManager: CoreDataManager = CoreDataManager.shared) {
+        self.coreDataManager = coreDataManager
+    }
+    
     func viewDidLoad() {
-        cells = [.event(EventCellViewModel()), .event(EventCellViewModel())]
+        
+        let events = coreDataManager.fetchEvents()
+        cells = events.map {
+            .event(EventCellViewModel($0))
+        }
         onUpdate()
     }
     

@@ -15,31 +15,41 @@ struct EventCellViewModel {
     
     // MARK: - PROPERTIES
     
-    var yearText: String {
-        "1 year"
+    let date = Date()
+    var timeRemainingStrings: [String] {
+        guard let eventDate = event.date else {
+            return []
+        }
+        
+        return date.timeRemaining(until: eventDate)?.components(separatedBy: ",") ?? []
     }
     
-    var monthText: String {
-        "3 months"
+    var dateText: String? {
+        guard let eventDate = event.date else {
+            return nil
+        }
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MMM yyyy"
+        return dateFormatter.string(from: eventDate)
     }
     
-    var weekText: String {
-        "1 week"
-    }
-    
-    var dayText: String {
-        "2 days"
-    }
-    
-    var dateText: String {
-        "12 Sept 2021"
-    }
-    
-    var eventNameText: String {
-        "Aashuuraa"
+    var eventNameText: String? {
+        event.name
     }
     
     var backgroundImage: UIImage {
-        #imageLiteral(resourceName: "New Leafs")
+        guard let eventBackgroundImage = event.image else {
+            return UIImage()
+        }
+        
+        return UIImage(data: eventBackgroundImage) ?? UIImage()
+    }
+    
+    private let event: Event
+    
+    // MARK: - INITIALIZERS
+    
+    init(_ event: Event) {
+        self.event = event
     }
 }

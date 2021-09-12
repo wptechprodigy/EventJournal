@@ -10,6 +10,8 @@ import CoreData
 
 final class CoreDataManager {
     
+    static let shared = CoreDataManager()
+    
     lazy var persistenceContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "EventsJournal")
         container.loadPersistentStores { (_, error) in
