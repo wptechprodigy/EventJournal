@@ -35,7 +35,7 @@ final class AddEventViewModel {
     
     // MARK: - INITIALIZERS
     
-    init(cellBuilder: EventCellBuilder, coreDataManager: CoreDataManager) {
+    init(cellBuilder: EventCellBuilder, coreDataManager: CoreDataManager = CoreDataManager.shared) {
         self.cellBuilder = cellBuilder
         self.coreDataManager = coreDataManager
     }
