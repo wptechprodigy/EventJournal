@@ -35,6 +35,7 @@
 		04D34E6926E8E321001BD8AC /* AddEventViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D34E6826E8E321001BD8AC /* AddEventViewController+Extensions.swift */; };
 		04EB364E26E9585200299492 /* ImagePickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB364D26E9585200299492 /* ImagePickerCoordinator.swift */; };
 		04EB365126E9A09700299492 /* EventCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB365026E9A09700299492 /* EventCellBuilder.swift */; };
+		04F8892D26EF8AA90083C1AF /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8892C26EF8AA90083C1AF /* UIImage+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		04D34E6826E8E321001BD8AC /* AddEventViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddEventViewController+Extensions.swift"; sourceTree = "<group>"; };
 		04EB364D26E9585200299492 /* ImagePickerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerCoordinator.swift; sourceTree = "<group>"; };
 		04EB365026E9A09700299492 /* EventCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCellBuilder.swift; sourceTree = "<group>"; };
+		04F8892C26EF8AA90083C1AF /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +260,7 @@
 				0404CA6326EE12FD00156973 /* UIFont+Extensions.swift */,
 				0404CA6526EE1A7800156973 /* UIView+Extensions.swift */,
 				0404CA6A26EE7D7900156973 /* Date+Extensions.swift */,
+				04F8892C26EF8AA90083C1AF /* UIImage+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -450,6 +453,7 @@
 				04D34E2526E19E08001BD8AC /* SceneDelegate.swift in Sources */,
 				04D34E5B26E2EFCF001BD8AC /* AddEventCoordinator.swift in Sources */,
 				04D34E6626E7B6C6001BD8AC /* UITableViewCell+Extensions.swift in Sources */,
+				04F8892D26EF8AA90083C1AF /* UIImage+Extensions.swift in Sources */,
 				04D34E5526E2E9BF001BD8AC /* EventsListViewModel.swift in Sources */,
 				0404CA6926EE2A7F00156973 /* EventsListViewController+Extensions.swift in Sources */,
 			);
