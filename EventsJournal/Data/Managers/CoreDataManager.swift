@@ -31,7 +31,9 @@ final class CoreDataManager {
         let event = Event(context: managedObjectContext)
         event.setValue(name, forKey: "name")
         event.setValue(date, forKey: "date")
-        let imageData = image.jpegData(compressionQuality: 1.0)
+        
+        let resizedImage = image.sameAspectRatio(newHeight: 250)
+        let imageData = resizedImage.jpegData(compressionQuality: 0.5)
         event.setValue(imageData, forKey: "image")
         
         do {
