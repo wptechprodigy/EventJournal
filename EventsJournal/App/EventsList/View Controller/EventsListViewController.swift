@@ -43,6 +43,7 @@ class EventsListViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.register(EventCell.self,
                            forCellReuseIdentifier: EventCell.reuseIdentifier)
     }

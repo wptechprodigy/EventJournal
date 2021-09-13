@@ -36,6 +36,9 @@
 		04EB364E26E9585200299492 /* ImagePickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB364D26E9585200299492 /* ImagePickerCoordinator.swift */; };
 		04EB365126E9A09700299492 /* EventCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB365026E9A09700299492 /* EventCellBuilder.swift */; };
 		04F8892D26EF8AA90083C1AF /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8892C26EF8AA90083C1AF /* UIImage+Extensions.swift */; };
+		04F8893126EFA9D10083C1AF /* EventDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8893026EFA9D10083C1AF /* EventDetailCoordinator.swift */; };
+		04F8893426EFD5510083C1AF /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8893326EFD5510083C1AF /* EventDetailViewController.swift */; };
+		04F8893726EFD5B50083C1AF /* EventDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8893626EFD5B50083C1AF /* EventDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +73,9 @@
 		04EB364D26E9585200299492 /* ImagePickerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerCoordinator.swift; sourceTree = "<group>"; };
 		04EB365026E9A09700299492 /* EventCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCellBuilder.swift; sourceTree = "<group>"; };
 		04F8892C26EF8AA90083C1AF /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		04F8893026EFA9D10083C1AF /* EventDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailCoordinator.swift; sourceTree = "<group>"; };
+		04F8893326EFD5510083C1AF /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
+		04F8893626EFD5B50083C1AF /* EventDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +92,6 @@
 		0404CA5A26EE0C7B00156973 /* Event */ = {
 			isa = PBXGroup;
 			children = (
-				0404CA5D26EE0CB300156973 /* Coordinator */,
 				0404CA5C26EE0C9600156973 /* View Controller */,
 				0404CA5B26EE0C8800156973 /* View Model */,
 			);
@@ -107,13 +112,6 @@
 				0404CA5E26EE0CC700156973 /* View Cell */,
 			);
 			path = "View Controller";
-			sourceTree = "<group>";
-		};
-		0404CA5D26EE0CB300156973 /* Coordinator */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		0404CA5E26EE0CC700156973 /* View Cell */ = {
@@ -176,6 +174,7 @@
 		04D34E3726E19EC5001BD8AC /* App */ = {
 			isa = PBXGroup;
 			children = (
+				04F8892E26EFA98C0083C1AF /* EventDetail */,
 				0404CA5A26EE0C7B00156973 /* Event */,
 				04D34E5626E2EF87001BD8AC /* AddEvent */,
 				04D34E3E26E22F9F001BD8AC /* EventsList */,
@@ -360,6 +359,40 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		04F8892E26EFA98C0083C1AF /* EventDetail */ = {
+			isa = PBXGroup;
+			children = (
+				04F8893526EFD59A0083C1AF /* View Model */,
+				04F8893226EFD5200083C1AF /* View Controller */,
+				04F8892F26EFA99D0083C1AF /* Coordinator */,
+			);
+			path = EventDetail;
+			sourceTree = "<group>";
+		};
+		04F8892F26EFA99D0083C1AF /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				04F8893026EFA9D10083C1AF /* EventDetailCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		04F8893226EFD5200083C1AF /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04F8893326EFD5510083C1AF /* EventDetailViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		04F8893526EFD59A0083C1AF /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				04F8893626EFD5B50083C1AF /* EventDetailViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -430,10 +463,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04F8893726EFD5B50083C1AF /* EventDetailViewModel.swift in Sources */,
 				04D34E6226E7AA90001BD8AC /* TitleSubtitleCell.swift in Sources */,
 				04D34E3C26E1A451001BD8AC /* AppCoordinator.swift in Sources */,
 				04EB364E26E9585200299492 /* ImagePickerCoordinator.swift in Sources */,
 				04D34E5D26E6884C001BD8AC /* AddEventViewController.swift in Sources */,
+				04F8893126EFA9D10083C1AF /* EventDetailCoordinator.swift in Sources */,
 				04D34E2726E19E08001BD8AC /* EventsListViewController.swift in Sources */,
 				0404CA6026EE0CF900156973 /* EventCellViewModel.swift in Sources */,
 				04D34E5F26E689DB001BD8AC /* AddEventViewModel.swift in Sources */,
@@ -455,6 +490,7 @@
 				04D34E6626E7B6C6001BD8AC /* UITableViewCell+Extensions.swift in Sources */,
 				04F8892D26EF8AA90083C1AF /* UIImage+Extensions.swift in Sources */,
 				04D34E5526E2E9BF001BD8AC /* EventsListViewModel.swift in Sources */,
+				04F8893426EFD5510083C1AF /* EventDetailViewController.swift in Sources */,
 				0404CA6926EE2A7F00156973 /* EventsListViewController+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
