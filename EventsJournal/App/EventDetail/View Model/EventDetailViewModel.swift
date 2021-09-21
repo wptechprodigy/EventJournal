@@ -12,6 +12,7 @@ final class EventDetailViewModel {
     
     // MARK: - PROPERTIES
     
+    private let date = Date()
     private let eventID: NSManagedObjectID
     private let coreDataManager: CoreDataManager
     private var event: Event?
@@ -20,6 +21,17 @@ final class EventDetailViewModel {
     var image: UIImage? {
         guard let imageData = event?.image else { return nil }
         return UIImage(data: imageData)
+    }
+    
+    var timeRemainingViewModel: TimeRemainingViewModel? {
+        guard
+            let eventDate = event?.date,
+            let timeRemainingParts = date.timeRemaining(until: eventDate)?.components(separatedBy: ",") else {
+            return nil
+        }
+        
+        return TimeRemainingViewModel(timeRemainingParts: timeRemainingParts,
+                                      mode: .detail)
     }
     
     // MARK: - INITIALIZERS

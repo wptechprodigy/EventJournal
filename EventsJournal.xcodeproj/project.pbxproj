@@ -39,6 +39,8 @@
 		04F8893126EFA9D10083C1AF /* EventDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8893026EFA9D10083C1AF /* EventDetailCoordinator.swift */; };
 		04F8893426EFD5510083C1AF /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8893326EFD5510083C1AF /* EventDetailViewController.swift */; };
 		04F8893726EFD5B50083C1AF /* EventDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8893626EFD5B50083C1AF /* EventDetailViewModel.swift */; };
+		04F8893C26EFF97A0083C1AF /* TimeRemainingStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8893B26EFF97A0083C1AF /* TimeRemainingStackView.swift */; };
+		04F8893E26EFFA8B0083C1AF /* TimeRemainingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8893D26EFFA8B0083C1AF /* TimeRemainingViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +78,8 @@
 		04F8893026EFA9D10083C1AF /* EventDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailCoordinator.swift; sourceTree = "<group>"; };
 		04F8893326EFD5510083C1AF /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		04F8893626EFD5B50083C1AF /* EventDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewModel.swift; sourceTree = "<group>"; };
+		04F8893B26EFF97A0083C1AF /* TimeRemainingStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeRemainingStackView.swift; sourceTree = "<group>"; };
+		04F8893D26EFFA8B0083C1AF /* TimeRemainingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeRemainingViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +178,7 @@
 		04D34E3726E19EC5001BD8AC /* App */ = {
 			isa = PBXGroup;
 			children = (
+				04F8893826EFF9360083C1AF /* TimeRemaining  */,
 				04F8892E26EFA98C0083C1AF /* EventDetail */,
 				0404CA5A26EE0C7B00156973 /* Event */,
 				04D34E5626E2EF87001BD8AC /* AddEvent */,
@@ -393,6 +398,31 @@
 			path = "View Model";
 			sourceTree = "<group>";
 		};
+		04F8893826EFF9360083C1AF /* TimeRemaining  */ = {
+			isa = PBXGroup;
+			children = (
+				04F8893A26EFF9620083C1AF /* View */,
+				04F8893926EFF9590083C1AF /* View Model */,
+			);
+			path = "TimeRemaining ";
+			sourceTree = "<group>";
+		};
+		04F8893926EFF9590083C1AF /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				04F8893D26EFFA8B0083C1AF /* TimeRemainingViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		04F8893A26EFF9620083C1AF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04F8893B26EFF97A0083C1AF /* TimeRemainingStackView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -471,6 +501,7 @@
 				04F8893126EFA9D10083C1AF /* EventDetailCoordinator.swift in Sources */,
 				04D34E2726E19E08001BD8AC /* EventsListViewController.swift in Sources */,
 				0404CA6026EE0CF900156973 /* EventCellViewModel.swift in Sources */,
+				04F8893E26EFFA8B0083C1AF /* TimeRemainingViewModel.swift in Sources */,
 				04D34E5F26E689DB001BD8AC /* AddEventViewModel.swift in Sources */,
 				04EB365126E9A09700299492 /* EventCellBuilder.swift in Sources */,
 				04D34E4D26E29340001BD8AC /* EventsJournal.xcdatamodeld in Sources */,
@@ -486,6 +517,7 @@
 				0404CA6B26EE7D7900156973 /* Date+Extensions.swift in Sources */,
 				04D34E4626E233D4001BD8AC /* UIViewController+Extensions.swift in Sources */,
 				04D34E2526E19E08001BD8AC /* SceneDelegate.swift in Sources */,
+				04F8893C26EFF97A0083C1AF /* TimeRemainingStackView.swift in Sources */,
 				04D34E5B26E2EFCF001BD8AC /* AddEventCoordinator.swift in Sources */,
 				04D34E6626E7B6C6001BD8AC /* UITableViewCell+Extensions.swift in Sources */,
 				04F8892D26EF8AA90083C1AF /* UIImage+Extensions.swift in Sources */,

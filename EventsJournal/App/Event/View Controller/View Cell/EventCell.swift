@@ -11,7 +11,7 @@ final class EventCell: UITableViewCell {
     
     // MARK: - PROPERTIES
     
-    private var timeRemainingStrings = [UILabel(), UILabel(), UILabel(), UILabel()]
+    private var timeRemainingStackView = TimeRemainingStackView()
     private let emptyView = UIView()
     private let dateLabel = UILabel()
     
@@ -37,14 +37,14 @@ final class EventCell: UITableViewCell {
     // MARK: - HELPER METHODS
     
     private func setupViewElements() {
-        (timeRemainingStrings + [dateLabel, eventNameLabel, backgroundImageView, verticalStackView]).forEach {
+        
+        timeRemainingStackView.setup()
+        
+        [dateLabel, eventNameLabel, backgroundImageView, verticalStackView].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
         
-        for label in (timeRemainingStrings + [
-            dateLabel,
-            eventNameLabel
-        ]) {
+        for label in [dateLabel, eventNameLabel] {
             
             switch label {
             case dateLabel:
@@ -67,7 +67,7 @@ final class EventCell: UITableViewCell {
         contentView.addSubview(verticalStackView)
         contentView.addSubview(eventNameLabel)
         
-        (timeRemainingStrings + [emptyView, dateLabel]).forEach {
+        [timeRemainingStackView, emptyView, dateLabel].forEach {
             verticalStackView.addArrangedSubview($0)
         }
     }
@@ -87,12 +87,8 @@ final class EventCell: UITableViewCell {
     }
     
     func update(with viewModel: EventCellViewModel) {
-        timeRemainingStrings.forEach {
-            $0.text = ""
-        }
-        
-        viewModel.timeRemainingStrings.enumerated().forEach {
-            timeRemainingStrings[$0.offset].text = $0.element
+        if let timeRemainingViewModel = viewModel.timeRemainingViewModel {
+            timeRemainingStackView.update(with: timeRemainingViewModel)
         }
         
         dateLabel.text = viewModel.dateText

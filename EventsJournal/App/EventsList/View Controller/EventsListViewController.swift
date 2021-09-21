@@ -41,6 +41,7 @@ class EventsListViewController: UIViewController {
         navigationItem.rightBarButtonItem = barButtonItem
         navigationItem.title = viewModel.title
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
         
         tableView.dataSource = self
         tableView.delegate = self

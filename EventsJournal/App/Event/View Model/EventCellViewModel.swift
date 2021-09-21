@@ -16,7 +16,7 @@ struct EventCellViewModel {
     
     // MARK: - PROPERTIES
     
-    let date = Date()
+    private let date = Date()
     private static let imageCache = NSCache<NSString, UIImage>()
     private let imageQueue = DispatchQueue(label: "imageQueue", qos: .background)
     var onSelect: (NSManagedObjectID) -> Void = { _ in }
@@ -44,6 +44,17 @@ struct EventCellViewModel {
     
     var eventNameText: String? {
         event.name
+    }
+    
+    var timeRemainingViewModel: TimeRemainingViewModel? {
+        guard
+            let eventDate = event.date,
+            let timeRemainingParts = date.timeRemaining(until: eventDate)?.components(separatedBy: ",") else {
+            return nil
+        }
+        
+        return TimeRemainingViewModel(timeRemainingParts: timeRemainingParts,
+                                      mode: .cell)
     }
     
     private let event: Event
