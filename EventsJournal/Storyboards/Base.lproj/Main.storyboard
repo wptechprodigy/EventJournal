@@ -37,7 +37,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-219" y="121"/>
+            <point key="canvasLocation" x="-222" y="121"/>
         </scene>
         <!--Add Event View Controller-->
         <scene sceneID="teu-ap-od6">
@@ -68,6 +68,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ux1-qr-q2r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="470" y="121"/>
+        </scene>
+        <!--Event Detail View Controller-->
+        <scene sceneID="rxN-nV-Ueh">
+            <objects>
+                <viewController storyboardIdentifier="EventDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="NHO-YX-7MZ" customClass="EventDetailViewController" customModule="EventsJournal" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JKV-EE-F9V">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="K1K-fJ-8rc">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="110" placeholderIntrinsicHeight="200" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kSs-jl-Igg" customClass="TimeRemainingStackView" customModule="EventsJournal" customModuleProvider="target">
+                                <rect key="frame" x="152" y="348" width="110" height="200"/>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="j7v-wO-ToE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kSs-jl-Igg" firstAttribute="centerY" secondItem="JKV-EE-F9V" secondAttribute="centerY" id="6ss-js-oP4"/>
+                            <constraint firstItem="kSs-jl-Igg" firstAttribute="centerX" secondItem="JKV-EE-F9V" secondAttribute="centerX" id="FDa-cH-iLR"/>
+                            <constraint firstAttribute="trailing" secondItem="K1K-fJ-8rc" secondAttribute="trailing" id="RXA-rr-nXb"/>
+                            <constraint firstAttribute="bottom" secondItem="K1K-fJ-8rc" secondAttribute="bottom" id="bJ9-Pa-h7V"/>
+                            <constraint firstItem="K1K-fJ-8rc" firstAttribute="leading" secondItem="JKV-EE-F9V" secondAttribute="leading" id="d28-EC-bDw"/>
+                            <constraint firstItem="K1K-fJ-8rc" firstAttribute="top" secondItem="JKV-EE-F9V" secondAttribute="top" id="fMm-Ux-5hR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="K1K-fJ-8rc" id="ShP-pu-12Y"/>
+                        <outlet property="timeRemainingStackView" destination="kSs-jl-Igg" id="saf-pl-OM5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jmY-ey-qIY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1159" y="121"/>
         </scene>
     </scenes>
     <resources>

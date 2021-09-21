@@ -21,3 +21,9 @@ extension EventsListViewController: UITableViewDataSource {
         viewModel.numberOfRows()
     }
 }
+
+extension EventsListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.didSelectRow(at: indexPath)
+    }
+}

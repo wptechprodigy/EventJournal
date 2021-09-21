@@ -10,14 +10,16 @@
 // We could use the data type to handle the image but
 // for this purpose, there's not much benefit to that...
 import UIKit
+import CoreData
 
 struct EventCellViewModel {
     
     // MARK: - PROPERTIES
     
-    let date = Date()
+    private let date = Date()
     private static let imageCache = NSCache<NSString, UIImage>()
     private let imageQueue = DispatchQueue(label: "imageQueue", qos: .background)
+    var onSelect: (NSManagedObjectID) -> Void = { _ in }
     
     private var cacheKey: String {
         event.objectID.description
@@ -44,6 +46,27 @@ struct EventCellViewModel {
         event.name
     }
     
+    var timeRemainingViewModel: TimeRemainingViewModel? {
+        guard
+            let eventDate = event.date,
+            let timeRemainingParts = date.timeRemaining(until: eventDate)?.components(separatedBy: ",") else {
+            return nil
+        }
+        
+        return TimeRemainingViewModel(timeRemainingParts: timeRemainingParts,
+                                      mode: .cell)
+    }
+    
+    private let event: Event
+    
+    // MARK: - INITIALIZERS
+    
+    init(_ event: Event) {
+        self.event = event
+    }
+    
+    // MARK: - METHODS
+    
     func loadImage(completion: @escaping (UIImage?) -> Void) {
         // Check if the image is already in the cache with its value and then complete
         if let image = Self.imageCache.object(forKey: cacheKey as NSString) {
@@ -67,22 +90,7 @@ struct EventCellViewModel {
         }
     }
     
-    
-    // There is a drawback with this approach as the
-    // image is pulled each time from core data
-//    var backgroundImage: UIImage {
-//        guard let eventBackgroundImage = event.image else {
-//            return UIImage()
-//        }
-//
-//        return UIImage(data: eventBackgroundImage) ?? UIImage()
-//    }
-    
-    private let event: Event
-    
-    // MARK: - INITIALIZERS
-    
-    init(_ event: Event) {
-        self.event = event
+    func didSelect() {
+        onSelect(event.objectID)
     }
 }

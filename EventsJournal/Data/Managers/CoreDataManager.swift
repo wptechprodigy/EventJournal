@@ -10,6 +10,8 @@ import CoreData
 
 final class CoreDataManager {
     
+    // MARK: - PROPERTIES
+    
     static let shared = CoreDataManager()
     
     lazy var persistenceContainer: NSPersistentContainer = {
@@ -40,6 +42,16 @@ final class CoreDataManager {
             try managedObjectContext.save()
         } catch {
             print(error.localizedDescription)
+        }
+    }
+    
+    func getEvent(_ eventID: NSManagedObjectID) -> Event? {
+        
+        do {
+            return try managedObjectContext.existingObject(with: eventID) as? Event
+        } catch {
+            print(error.localizedDescription)
+            return nil
         }
     }
     
