@@ -16,6 +16,7 @@ final class EventDetailCoordinator: Coordinator {
     private let navigationController: UINavigationController
     
     private let eventID: NSManagedObjectID
+    var parentCoordinator: EventsListCoordinator?
     
     // MARK: - INITIALIZERS
     
@@ -28,7 +29,14 @@ final class EventDetailCoordinator: Coordinator {
     
     func start() {
         let eventDetailViewController: EventDetailViewController = .instantiate()
-        eventDetailViewController.viewModel = EventDetailViewModel(eventID: eventID)
+        let eventDetailViewModel = EventDetailViewModel(eventID: eventID)
+        
+        eventDetailViewModel.coordinator = self
+        eventDetailViewController.viewModel = eventDetailViewModel
         navigationController.pushViewController(eventDetailViewController, animated: true)
+    }
+    
+    func didFinish() {
+        parentCoordinator?.childDidFinish(self)
     }
 }

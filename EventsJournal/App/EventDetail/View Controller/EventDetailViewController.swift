@@ -26,6 +26,11 @@ final class EventDetailViewController: UIViewController {
         handleUpdate()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        viewModel.viewDidDisappear()
+    }
+    
     // MARK: - HELPER METHODS
     
     private func handleUpdate() {
