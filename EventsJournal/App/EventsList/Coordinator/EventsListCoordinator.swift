@@ -49,6 +49,7 @@ final class EventsListCoordinator: Coordinator {
             navigationController: navigationController)
         
         childCoordinators.append(eventDetailCoordinator)
+        eventDetailCoordinator.parentCoordinator = self
         eventDetailCoordinator.start()
     }
     
