@@ -60,15 +60,15 @@ final class CoreDataManager {
         }
     }
     
-    func getEvent(_ eventID: NSManagedObjectID) -> Event? {
-        
+    func get<T: NSManagedObject>(_ id: NSManagedObjectID) -> T? {
         do {
-            return try managedObjectContext.existingObject(with: eventID) as? Event
+            return try managedObjectContext.existingObject(with: id) as? T
         } catch {
             print(error.localizedDescription)
             return nil
         }
     }
+    
     
     func fetchEvents() -> [Event] {
         
