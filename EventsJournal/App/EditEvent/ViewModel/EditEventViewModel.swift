@@ -5,7 +5,7 @@
 //  Created by waheedCodes on 23/09/2021.
 //
 
-import Foundation
+import UIKit
 
 final class EditEventViewModel {
     
@@ -15,7 +15,7 @@ final class EditEventViewModel {
     
     // MARK: - PROPERTIES
     
-    var title = "Add Event"
+    var title = "Edit Event"
     var onUpdate: () -> Void = {}
     private(set) var cells: [Cell] = []
     weak var coordinator: EditEventCoordinator?
@@ -32,10 +32,16 @@ final class EditEventViewModel {
     
     private let cellBuilder: EventCellBuilder
     private let coreDataManager: CoreDataManager
+    private let event: Event
     
     // MARK: - INITIALIZERS
     
-    init(cellBuilder: EventCellBuilder, coreDataManager: CoreDataManager = CoreDataManager.shared) {
+    init(
+        event: Event,
+        cellBuilder: EventCellBuilder,
+        coreDataManager: CoreDataManager = CoreDataManager.shared)
+    {
+        self.event = event
         self.cellBuilder = cellBuilder
         self.coreDataManager = coreDataManager
     }
@@ -124,5 +130,16 @@ private extension EditEventViewModel {
                 backgroundCellViewModel
             )
         ]
+        
+        guard
+            let name = event.name,
+            let date = event.date,
+            let imageData = event.image,
+            let image = UIImage(data: imageData)
+        else { return }
+        
+        nameCellViewModel.update(name)
+        nameCellViewModel.update(date)
+        nameCellViewModel.update(image)
     }
 }
