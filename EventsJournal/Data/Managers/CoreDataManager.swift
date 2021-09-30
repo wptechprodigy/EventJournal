@@ -29,37 +29,6 @@ final class CoreDataManager {
     
     // MARK: - FUNCTIONALITIES
     
-    func saveEvent(name: String, date: Date, image: UIImage) {
-        let event = Event(context: managedObjectContext)
-        event.setValue(name, forKey: "name")
-        event.setValue(date, forKey: "date")
-        
-        let resizedImage = image.sameAspectRatio(newHeight: 250)
-        let imageData = resizedImage.jpegData(compressionQuality: 0.5)
-        event.setValue(imageData, forKey: "image")
-        
-        do {
-            try managedObjectContext.save()
-        } catch {
-            print(error.localizedDescription)
-        }
-    }
-    
-    func updateEvent(event: Event, name: String, date: Date, image: UIImage) {
-        event.setValue(name, forKey: "name")
-        event.setValue(date, forKey: "date")
-        
-        let resizedImage = image.sameAspectRatio(newHeight: 250)
-        let imageData = resizedImage.jpegData(compressionQuality: 0.5)
-        event.setValue(imageData, forKey: "image")
-        
-        do {
-            try managedObjectContext.save()
-        } catch {
-            print(error.localizedDescription)
-        }
-    }
-    
     func get<T: NSManagedObject>(_ id: NSManagedObjectID) -> T? {
         do {
             return try managedObjectContext.existingObject(with: id) as? T
@@ -76,6 +45,14 @@ final class CoreDataManager {
         } catch {
             print(error.localizedDescription)
             return []
+        }
+    }
+    
+    func save() {
+        do {
+            try managedObjectContext.save()
+        } catch {
+            print(error.localizedDescription)
         }
     }
 }
