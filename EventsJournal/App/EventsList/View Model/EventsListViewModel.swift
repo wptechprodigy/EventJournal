@@ -33,6 +33,9 @@ final class EventsListViewModel {
     }
     
     func reload() {
+        // For production purposes, it's better to reload the affected cell
+        // or avoid caching the image statically on the EventCellViewModel
+        EventCellViewModel.imageCache.removeAllObjects()
         let events = coreDataManager.fetchEvents()
         cells = events.map {
             var eventCellViewModel = EventCellViewModel($0)

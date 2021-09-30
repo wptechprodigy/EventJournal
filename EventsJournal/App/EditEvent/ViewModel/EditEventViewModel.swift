@@ -1,13 +1,13 @@
 //
-//  AddEventViewModel.swift
+//  EditEventViewModel.swift
 //  EventsJournal
 //
-//  Created by waheedCodes on 06/09/2021.
+//  Created by waheedCodes on 23/09/2021.
 //
 
-import Foundation
+import UIKit
 
-final class AddEventViewModel {
+final class EditEventViewModel {
     
     enum Cell {
         case titleSubtitle(TitleSubtitleCellViewModel)
@@ -15,10 +15,10 @@ final class AddEventViewModel {
     
     // MARK: - PROPERTIES
     
-    var title = "Add Event"
+    var title = "Edit Event"
     var onUpdate: () -> Void = {}
     private(set) var cells: [Cell] = []
-    weak var coordinator: AddEventCoordinator?
+    weak var coordinator: EditEventCoordinator?
     
     private var nameCellViewModel: TitleSubtitleCellViewModel?
     private var dateCellViewModel: TitleSubtitleCellViewModel?
@@ -32,10 +32,16 @@ final class AddEventViewModel {
     
     private let cellBuilder: EventCellBuilder
     private let coreDataManager: CoreDataManager
+    private let event: Event
     
     // MARK: - INITIALIZERS
     
-    init(cellBuilder: EventCellBuilder, coreDataManager: CoreDataManager = CoreDataManager.shared) {
+    init(
+        event: Event,
+        cellBuilder: EventCellBuilder,
+        coreDataManager: CoreDataManager = CoreDataManager.shared)
+    {
+        self.event = event
         self.cellBuilder = cellBuilder
         self.coreDataManager = coreDataManager
     }
@@ -70,10 +76,10 @@ final class AddEventViewModel {
         else { return }
         
         // Save in core data
-        coreDataManager.saveEvent(name: name, date: date, image: image)
+        coreDataManager.updateEvent(event: event, name: name, date: date, image: image)
         
         // Tell coordinator to dismiss the add event view controller
-        coordinator?.didFinishSaveEvent()
+        coordinator?.didFinishUpdatingEvent()
     }
     
     func updateCell(atIndexPath: IndexPath, subtitle: String) {
@@ -84,7 +90,7 @@ final class AddEventViewModel {
         }
     }
     
-    func tappedSelectImageRow(at indexPath: IndexPath) {
+    func tapppedSelectImageRow(at indexPath: IndexPath) {
         switch cells[indexPath.row] {
         case .titleSubtitle(let titleSubtitleCellViewModel):
             guard titleSubtitleCellViewModel.type == .image else {
@@ -99,7 +105,7 @@ final class AddEventViewModel {
     }
 }
 
-private extension AddEventViewModel {
+private extension EditEventViewModel {
     func setUpCells() {
         nameCellViewModel = cellBuilder.makeTitleSubtitleViewModel(.text)
         dateCellViewModel = cellBuilder.makeTitleSubtitleViewModel(.date) { [weak self] in
@@ -124,5 +130,16 @@ private extension AddEventViewModel {
                 backgroundCellViewModel
             )
         ]
+        
+        guard
+            let name = event.name,
+            let date = event.date,
+            let imageData = event.image,
+            let image = UIImage(data: imageData)
+        else { return }
+        
+        nameCellViewModel.update(name)
+        dateCellViewModel.update(date)
+        backgroundCellViewModel.update(image)
     }
 }

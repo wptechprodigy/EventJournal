@@ -1,13 +1,13 @@
 //
-//  AddEventViewController+Extensions.swift
+//  EditEventViewController+Extensions.swift
 //  EventsJournal
 //
-//  Created by waheedCodes on 08/09/2021.
+//  Created by waheedCodes on 23/09/2021.
 //
 
 import UIKit
 
-extension AddEventViewController: UITableViewDataSource {
+extension EditEventViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfRows()
@@ -28,14 +28,14 @@ extension AddEventViewController: UITableViewDataSource {
     }
 }
 
-extension AddEventViewController: UITableViewDelegate {
+extension EditEventViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel.tappedSelectImageRow(at: indexPath)
+        viewModel.tapppedSelectImageRow(at: indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
-extension AddEventViewController: UITextFieldDelegate {
+extension EditEventViewController: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
@@ -53,3 +53,4 @@ extension AddEventViewController: UITextFieldDelegate {
         return true
     }
 }
+

@@ -42,7 +42,15 @@ final class EventDetailViewController: UIViewController {
             self.backgroundImageView.image = self.viewModel.image
             self.timeRemainingStackView.update(with: timeRemainingViewModel)
         }
-        
+        addEditButton()
         viewModel.viewDidLoad()
+    }
+    
+    private func addEditButton() {
+        navigationItem.rightBarButtonItem = .init(image: UIImage(
+                                                    systemName: "pencil"),
+                                                  style: .plain,
+                                                  target: viewModel,
+                                                  action: #selector(viewModel.didTapEditButton))
     }
 }
