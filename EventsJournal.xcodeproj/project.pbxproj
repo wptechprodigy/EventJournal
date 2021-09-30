@@ -357,7 +357,6 @@
 		04D34E5626E2EF87001BD8AC /* AddEvent */ = {
 			isa = PBXGroup;
 			children = (
-				04D34E5726E2EF98001BD8AC /* Coordinator */,
 				04D34E5826E2EFA9001BD8AC /* View Controller */,
 				04D34E5926E2EFB4001BD8AC /* View Model */,
 			);
@@ -377,6 +376,7 @@
 			isa = PBXGroup;
 			children = (
 				04D34E6726E8E2ED001BD8AC /* Extensions */,
+				04D34E5726E2EF98001BD8AC /* Coordinator */,
 				04D34E6026E7AA58001BD8AC /* View Cells */,
 				04D34E5C26E6884C001BD8AC /* AddEventViewController.swift */,
 			);

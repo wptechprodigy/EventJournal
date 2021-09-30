@@ -30,7 +30,7 @@ extension AddEventViewController: UITableViewDataSource {
 
 extension AddEventViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel.tapppedSelectImageRow(at: indexPath)
+        viewModel.tappedSelectImageRow(at: indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

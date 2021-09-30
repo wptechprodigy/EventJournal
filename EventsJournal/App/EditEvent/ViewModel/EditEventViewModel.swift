@@ -76,10 +76,10 @@ final class EditEventViewModel {
         else { return }
         
         // Save in core data
-        coreDataManager.saveEvent(name: name, date: date, image: image)
+        coreDataManager.updateEvent(event: event, name: name, date: date, image: image)
         
         // Tell coordinator to dismiss the add event view controller
-        coordinator?.didFinishSaveEvent()
+        coordinator?.didFinishUpdatingEvent()
     }
     
     func updateCell(atIndexPath: IndexPath, subtitle: String) {
@@ -139,7 +139,7 @@ private extension EditEventViewModel {
         else { return }
         
         nameCellViewModel.update(name)
-        nameCellViewModel.update(date)
-        nameCellViewModel.update(image)
+        dateCellViewModel.update(date)
+        backgroundCellViewModel.update(image)
     }
 }

@@ -84,7 +84,7 @@ final class AddEventViewModel {
         }
     }
     
-    func tapppedSelectImageRow(at indexPath: IndexPath) {
+    func tappedSelectImageRow(at indexPath: IndexPath) {
         switch cells[indexPath.row] {
         case .titleSubtitle(let titleSubtitleCellViewModel):
             guard titleSubtitleCellViewModel.type == .image else {
