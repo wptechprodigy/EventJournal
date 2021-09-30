@@ -104,6 +104,36 @@
             </objects>
             <point key="canvasLocation" x="1159" y="121"/>
         </scene>
+        <!--Edit Event View Controller-->
+        <scene sceneID="f9z-2H-LIm">
+            <objects>
+                <viewController storyboardIdentifier="EditEventViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZHt-O6-oLD" customClass="EditEventViewController" customModule="EventsJournal" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oQ0-Pq-AyR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kjM-34-awM">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="H5a-5h-Ztj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kjM-34-awM" firstAttribute="leading" secondItem="H5a-5h-Ztj" secondAttribute="leading" id="2DI-am-B0b"/>
+                            <constraint firstItem="H5a-5h-Ztj" firstAttribute="bottom" secondItem="kjM-34-awM" secondAttribute="bottom" id="8LS-LQ-May"/>
+                            <constraint firstItem="kjM-34-awM" firstAttribute="top" secondItem="H5a-5h-Ztj" secondAttribute="top" id="BYa-6O-a5N"/>
+                            <constraint firstItem="H5a-5h-Ztj" firstAttribute="trailing" secondItem="kjM-34-awM" secondAttribute="trailing" id="gko-CD-90U"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="kjM-34-awM" id="ubI-9w-Uwu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Dz-3o-niN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1886" y="121"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">

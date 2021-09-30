@@ -1,13 +1,13 @@
 //
-//  AddEventViewModel.swift
+//  EditEventViewModel.swift
 //  EventsJournal
 //
-//  Created by waheedCodes on 06/09/2021.
+//  Created by waheedCodes on 23/09/2021.
 //
 
 import Foundation
 
-final class AddEventViewModel {
+final class EditEventViewModel {
     
     enum Cell {
         case titleSubtitle(TitleSubtitleCellViewModel)
@@ -18,7 +18,7 @@ final class AddEventViewModel {
     var title = "Add Event"
     var onUpdate: () -> Void = {}
     private(set) var cells: [Cell] = []
-    weak var coordinator: AddEventCoordinator?
+    weak var coordinator: EditEventCoordinator?
     
     private var nameCellViewModel: TitleSubtitleCellViewModel?
     private var dateCellViewModel: TitleSubtitleCellViewModel?
@@ -99,7 +99,7 @@ final class AddEventViewModel {
     }
 }
 
-private extension AddEventViewModel {
+private extension EditEventViewModel {
     func setUpCells() {
         nameCellViewModel = cellBuilder.makeTitleSubtitleViewModel(.text)
         dateCellViewModel = cellBuilder.makeTitleSubtitleViewModel(.date) { [weak self] in

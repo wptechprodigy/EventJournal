@@ -53,4 +53,9 @@ final class EventDetailViewModel {
     func viewDidDisappear() {
         coordinator?.didFinish()
     }
+    
+    @objc func didTapEditButton() {
+        guard let event = event else { return }
+        coordinator?.onEditEvent(event)
+    }
 }

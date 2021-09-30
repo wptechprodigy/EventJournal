@@ -13,6 +13,10 @@
 		0404CA6626EE1A7800156973 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0404CA6526EE1A7800156973 /* UIView+Extensions.swift */; };
 		0404CA6926EE2A7F00156973 /* EventsListViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0404CA6826EE2A7F00156973 /* EventsListViewController+Extensions.swift */; };
 		0404CA6B26EE7D7900156973 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0404CA6A26EE7D7900156973 /* Date+Extensions.swift */; };
+		0489A48926FCE35100D846BA /* EditEventCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489A48826FCE35100D846BA /* EditEventCoordinator.swift */; };
+		0489A48B26FCE41C00D846BA /* EditEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489A48A26FCE41C00D846BA /* EditEventViewModel.swift */; };
+		0489A48D26FCE46F00D846BA /* EditEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489A48C26FCE46F00D846BA /* EditEventViewController.swift */; };
+		0489A49026FCE77200D846BA /* EditEventViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489A48F26FCE77200D846BA /* EditEventViewController+Extensions.swift */; };
 		04D34E2326E19E08001BD8AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D34E2226E19E08001BD8AC /* AppDelegate.swift */; };
 		04D34E2526E19E08001BD8AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D34E2426E19E08001BD8AC /* SceneDelegate.swift */; };
 		04D34E2726E19E08001BD8AC /* EventsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D34E2626E19E08001BD8AC /* EventsListViewController.swift */; };
@@ -50,6 +54,10 @@
 		0404CA6526EE1A7800156973 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		0404CA6826EE2A7F00156973 /* EventsListViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventsListViewController+Extensions.swift"; sourceTree = "<group>"; };
 		0404CA6A26EE7D7900156973 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		0489A48826FCE35100D846BA /* EditEventCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEventCoordinator.swift; sourceTree = "<group>"; };
+		0489A48A26FCE41C00D846BA /* EditEventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEventViewModel.swift; sourceTree = "<group>"; };
+		0489A48C26FCE46F00D846BA /* EditEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEventViewController.swift; sourceTree = "<group>"; };
+		0489A48F26FCE77200D846BA /* EditEventViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditEventViewController+Extensions.swift"; sourceTree = "<group>"; };
 		04D34E1F26E19E08001BD8AC /* EventsJournal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventsJournal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D34E2226E19E08001BD8AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04D34E2426E19E08001BD8AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,6 +142,49 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		0489A48426FCE26200D846BA /* EditEvent */ = {
+			isa = PBXGroup;
+			children = (
+				0489A48726FCE2B100D846BA /* ViewModel */,
+				0489A48626FCE27A00D846BA /* Coordinator */,
+				0489A48526FCE27300D846BA /* View Controller */,
+			);
+			path = EditEvent;
+			sourceTree = "<group>";
+		};
+		0489A48526FCE27300D846BA /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0489A48E26FCE74C00D846BA /* Extensions */,
+				0489A48C26FCE46F00D846BA /* EditEventViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		0489A48626FCE27A00D846BA /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				0489A48826FCE35100D846BA /* EditEventCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		0489A48726FCE2B100D846BA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0489A48A26FCE41C00D846BA /* EditEventViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0489A48E26FCE74C00D846BA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0489A48F26FCE77200D846BA /* EditEventViewController+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		04D34E1626E19E08001BD8AC = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +229,7 @@
 		04D34E3726E19EC5001BD8AC /* App */ = {
 			isa = PBXGroup;
 			children = (
+				0489A48426FCE26200D846BA /* EditEvent */,
 				04F8893826EFF9360083C1AF /* TimeRemaining  */,
 				04F8892E26EFA98C0083C1AF /* EventDetail */,
 				0404CA5A26EE0C7B00156973 /* Event */,
@@ -494,6 +546,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04F8893726EFD5B50083C1AF /* EventDetailViewModel.swift in Sources */,
+				0489A48926FCE35100D846BA /* EditEventCoordinator.swift in Sources */,
 				04D34E6226E7AA90001BD8AC /* TitleSubtitleCell.swift in Sources */,
 				04D34E3C26E1A451001BD8AC /* AppCoordinator.swift in Sources */,
 				04EB364E26E9585200299492 /* ImagePickerCoordinator.swift in Sources */,
@@ -513,8 +566,10 @@
 				04D34E2326E19E08001BD8AC /* AppDelegate.swift in Sources */,
 				0404CA6226EE0F6200156973 /* EventCell.swift in Sources */,
 				04D34E5026E293FD001BD8AC /* CoreDataManager.swift in Sources */,
+				0489A48D26FCE46F00D846BA /* EditEventViewController.swift in Sources */,
 				04D34E6426E7B09C001BD8AC /* TitleSubtitleCellViewModel.swift in Sources */,
 				0404CA6B26EE7D7900156973 /* Date+Extensions.swift in Sources */,
+				0489A48B26FCE41C00D846BA /* EditEventViewModel.swift in Sources */,
 				04D34E4626E233D4001BD8AC /* UIViewController+Extensions.swift in Sources */,
 				04D34E2526E19E08001BD8AC /* SceneDelegate.swift in Sources */,
 				04F8893C26EFF97A0083C1AF /* TimeRemainingStackView.swift in Sources */,
@@ -524,6 +579,7 @@
 				04D34E5526E2E9BF001BD8AC /* EventsListViewModel.swift in Sources */,
 				04F8893426EFD5510083C1AF /* EventDetailViewController.swift in Sources */,
 				0404CA6926EE2A7F00156973 /* EventsListViewController+Extensions.swift in Sources */,
+				0489A49026FCE77200D846BA /* EditEventViewController+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
