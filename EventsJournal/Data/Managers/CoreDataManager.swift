@@ -69,13 +69,10 @@ final class CoreDataManager {
         }
     }
     
-    
-    func fetchEvents() -> [Event] {
-        
+    func getAll<T: NSManagedObject>() -> [T] {
         do {
-            let fetchRequest = NSFetchRequest<Event>(entityName: "Event")
-            let events = try managedObjectContext.fetch(fetchRequest)
-            return events
+            let fetchRequest = NSFetchRequest<T>(entityName: "\(T.self)")
+            return try managedObjectContext.fetch(fetchRequest)
         } catch {
             print(error.localizedDescription)
             return []
