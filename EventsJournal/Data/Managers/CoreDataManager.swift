@@ -29,56 +29,30 @@ final class CoreDataManager {
     
     // MARK: - FUNCTIONALITIES
     
-    func saveEvent(name: String, date: Date, image: UIImage) {
-        let event = Event(context: managedObjectContext)
-        event.setValue(name, forKey: "name")
-        event.setValue(date, forKey: "date")
-        
-        let resizedImage = image.sameAspectRatio(newHeight: 250)
-        let imageData = resizedImage.jpegData(compressionQuality: 0.5)
-        event.setValue(imageData, forKey: "image")
-        
+    func get<T: NSManagedObject>(_ id: NSManagedObjectID) -> T? {
         do {
-            try managedObjectContext.save()
-        } catch {
-            print(error.localizedDescription)
-        }
-    }
-    
-    func updateEvent(event: Event, name: String, date: Date, image: UIImage) {
-        event.setValue(name, forKey: "name")
-        event.setValue(date, forKey: "date")
-        
-        let resizedImage = image.sameAspectRatio(newHeight: 250)
-        let imageData = resizedImage.jpegData(compressionQuality: 0.5)
-        event.setValue(imageData, forKey: "image")
-        
-        do {
-            try managedObjectContext.save()
-        } catch {
-            print(error.localizedDescription)
-        }
-    }
-    
-    func getEvent(_ eventID: NSManagedObjectID) -> Event? {
-        
-        do {
-            return try managedObjectContext.existingObject(with: eventID) as? Event
+            return try managedObjectContext.existingObject(with: id) as? T
         } catch {
             print(error.localizedDescription)
             return nil
         }
     }
     
-    func fetchEvents() -> [Event] {
-        
+    func getAll<T: NSManagedObject>() -> [T] {
         do {
-            let fetchRequest = NSFetchRequest<Event>(entityName: "Event")
-            let events = try managedObjectContext.fetch(fetchRequest)
-            return events
+            let fetchRequest = NSFetchRequest<T>(entityName: "\(T.self)")
+            return try managedObjectContext.fetch(fetchRequest)
         } catch {
             print(error.localizedDescription)
             return []
+        }
+    }
+    
+    func save() {
+        do {
+            try managedObjectContext.save()
+        } catch {
+            print(error.localizedDescription)
         }
     }
 }

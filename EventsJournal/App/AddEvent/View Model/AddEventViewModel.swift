@@ -31,13 +31,15 @@ final class AddEventViewModel {
     }()
     
     private let cellBuilder: EventCellBuilder
-    private let coreDataManager: CoreDataManager
+    private let eventService: EventServiceProtocol
     
     // MARK: - INITIALIZERS
     
-    init(cellBuilder: EventCellBuilder, coreDataManager: CoreDataManager = CoreDataManager.shared) {
+    init(cellBuilder: EventCellBuilder,
+         eventService: EventServiceProtocol = EventService()
+    ) {
         self.cellBuilder = cellBuilder
-        self.coreDataManager = coreDataManager
+        self.eventService = eventService
     }
     
     // MARK: - METHODS
@@ -70,7 +72,10 @@ final class AddEventViewModel {
         else { return }
         
         // Save in core data
-        coreDataManager.saveEvent(name: name, date: date, image: image)
+        eventService.perform(.add,
+                             EventInputData(name: name,
+                                            date: date,
+                                            image: image))
         
         // Tell coordinator to dismiss the add event view controller
         coordinator?.didFinishSaveEvent()
