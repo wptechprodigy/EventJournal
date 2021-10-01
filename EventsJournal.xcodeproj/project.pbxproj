@@ -14,6 +14,7 @@
 		0404CA6926EE2A7F00156973 /* EventsListViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0404CA6826EE2A7F00156973 /* EventsListViewController+Extensions.swift */; };
 		0404CA6B26EE7D7900156973 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0404CA6A26EE7D7900156973 /* Date+Extensions.swift */; };
 		044B4AA3270657D700502C29 /* EventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B4AA2270657D700502C29 /* EventService.swift */; };
+		044B4AA627071CCF00502C29 /* EventAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B4AA527071CCF00502C29 /* EventAction.swift */; };
 		0489A48926FCE35100D846BA /* EditEventCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489A48826FCE35100D846BA /* EditEventCoordinator.swift */; };
 		0489A48B26FCE41C00D846BA /* EditEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489A48A26FCE41C00D846BA /* EditEventViewModel.swift */; };
 		0489A48D26FCE46F00D846BA /* EditEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489A48C26FCE46F00D846BA /* EditEventViewController.swift */; };
@@ -56,6 +57,7 @@
 		0404CA6826EE2A7F00156973 /* EventsListViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventsListViewController+Extensions.swift"; sourceTree = "<group>"; };
 		0404CA6A26EE7D7900156973 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		044B4AA2270657D700502C29 /* EventService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventService.swift; sourceTree = "<group>"; };
+		044B4AA527071CCF00502C29 /* EventAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAction.swift; sourceTree = "<group>"; };
 		0489A48826FCE35100D846BA /* EditEventCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEventCoordinator.swift; sourceTree = "<group>"; };
 		0489A48A26FCE41C00D846BA /* EditEventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEventViewModel.swift; sourceTree = "<group>"; };
 		0489A48C26FCE46F00D846BA /* EditEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEventViewController.swift; sourceTree = "<group>"; };
@@ -147,9 +149,18 @@
 		044B4AA1270657C500502C29 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				044B4AA427071CBB00502C29 /* Actions */,
 				044B4AA2270657D700502C29 /* EventService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		044B4AA427071CBB00502C29 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				044B4AA527071CCF00502C29 /* EventAction.swift */,
+			);
+			path = Actions;
 			sourceTree = "<group>";
 		};
 		0489A48426FCE26200D846BA /* EditEvent */ = {
@@ -591,6 +602,7 @@
 				04D34E5526E2E9BF001BD8AC /* EventsListViewModel.swift in Sources */,
 				04F8893426EFD5510083C1AF /* EventDetailViewController.swift in Sources */,
 				0404CA6926EE2A7F00156973 /* EventsListViewController+Extensions.swift in Sources */,
+				044B4AA627071CCF00502C29 /* EventAction.swift in Sources */,
 				0489A49026FCE77200D846BA /* EditEventViewController+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
