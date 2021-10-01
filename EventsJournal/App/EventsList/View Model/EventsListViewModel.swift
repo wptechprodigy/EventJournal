@@ -20,12 +20,12 @@ final class EventsListViewModel {
     
     private(set) var cells: [Cell] = []
     var onUpdate = {}
-    private let coreDataManager: CoreDataManager
+    private let eventService: EventServiceProtocol
     
     // MARK: - INITIALIZERS
     
-    init(coreDataManager: CoreDataManager = CoreDataManager.shared) {
-        self.coreDataManager = coreDataManager
+    init(eventService: EventServiceProtocol = EventService()) {
+        self.eventService = eventService
     }
     
     func viewDidLoad() {
@@ -36,7 +36,7 @@ final class EventsListViewModel {
         // For production purposes, it's better to reload the affected cell
         // or avoid caching the image statically on the EventCellViewModel
         EventCellViewModel.imageCache.removeAllObjects()
-        let events = coreDataManager.fetchEvents()
+        let events = eventService.getEvents()
         cells = events.map {
             var eventCellViewModel = EventCellViewModel($0)
             if let coordinator = eventsListCoordinator {
