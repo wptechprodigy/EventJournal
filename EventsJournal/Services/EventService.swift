@@ -10,12 +10,6 @@ import CoreData
 
 // MARK: -
 
-struct EventInputData {
-    let name: String
-    let date: Date
-    let image: UIImage
-}
-
 protocol EventServiceProtocol {
     func perform(_ action: EventAction, _ data: EventInputData)
     func getEvent(_ id: NSManagedObjectID) -> Event?
