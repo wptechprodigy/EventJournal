@@ -16,6 +16,8 @@
 		044B4AA3270657D700502C29 /* EventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B4AA2270657D700502C29 /* EventService.swift */; };
 		044B4AA627071CCF00502C29 /* EventAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B4AA527071CCF00502C29 /* EventAction.swift */; };
 		044B4AA927071E4F00502C29 /* EventInputData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B4AA827071E4F00502C29 /* EventInputData.swift */; };
+		044B4AAC2707276600502C29 /* ParentUpdateCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B4AAB2707276600502C29 /* ParentUpdateCoordinatorProtocol.swift */; };
+		044B4AB027072DEF00502C29 /* DeleteEventCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B4AAF27072DEF00502C29 /* DeleteEventCoordinator.swift */; };
 		0489A48926FCE35100D846BA /* EditEventCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489A48826FCE35100D846BA /* EditEventCoordinator.swift */; };
 		0489A48B26FCE41C00D846BA /* EditEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489A48A26FCE41C00D846BA /* EditEventViewModel.swift */; };
 		0489A48D26FCE46F00D846BA /* EditEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489A48C26FCE46F00D846BA /* EditEventViewController.swift */; };
@@ -60,6 +62,8 @@
 		044B4AA2270657D700502C29 /* EventService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventService.swift; sourceTree = "<group>"; };
 		044B4AA527071CCF00502C29 /* EventAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAction.swift; sourceTree = "<group>"; };
 		044B4AA827071E4F00502C29 /* EventInputData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInputData.swift; sourceTree = "<group>"; };
+		044B4AAB2707276600502C29 /* ParentUpdateCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentUpdateCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		044B4AAF27072DEF00502C29 /* DeleteEventCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteEventCoordinator.swift; sourceTree = "<group>"; };
 		0489A48826FCE35100D846BA /* EditEventCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEventCoordinator.swift; sourceTree = "<group>"; };
 		0489A48A26FCE41C00D846BA /* EditEventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEventViewModel.swift; sourceTree = "<group>"; };
 		0489A48C26FCE46F00D846BA /* EditEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEventViewController.swift; sourceTree = "<group>"; };
@@ -173,6 +177,30 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		044B4AAA2707273600502C29 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				044B4AAB2707276600502C29 /* ParentUpdateCoordinatorProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		044B4AAD27072DB600502C29 /* DeleteEvent */ = {
+			isa = PBXGroup;
+			children = (
+				044B4AAE27072DD200502C29 /* Coordinator */,
+			);
+			path = DeleteEvent;
+			sourceTree = "<group>";
+		};
+		044B4AAE27072DD200502C29 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				044B4AAF27072DEF00502C29 /* DeleteEventCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		0489A48426FCE26200D846BA /* EditEvent */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +290,7 @@
 		04D34E3726E19EC5001BD8AC /* App */ = {
 			isa = PBXGroup;
 			children = (
+				044B4AAD27072DB600502C29 /* DeleteEvent */,
 				0489A48426FCE26200D846BA /* EditEvent */,
 				04F8893826EFF9360083C1AF /* TimeRemaining  */,
 				04F8892E26EFA98C0083C1AF /* EventDetail */,
@@ -300,6 +329,7 @@
 		04D34E3D26E1A50B001BD8AC /* Base App Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				044B4AAA2707273600502C29 /* Protocols */,
 				04D34E3B26E1A451001BD8AC /* AppCoordinator.swift */,
 			);
 			path = "Base App Coordinator";
@@ -595,6 +625,7 @@
 				04D34E6926E8E321001BD8AC /* AddEventViewController+Extensions.swift in Sources */,
 				04D34E4926E23EA1001BD8AC /* AppColor.swift in Sources */,
 				0404CA6426EE12FD00156973 /* UIFont+Extensions.swift in Sources */,
+				044B4AAC2707276600502C29 /* ParentUpdateCoordinatorProtocol.swift in Sources */,
 				0404CA6626EE1A7800156973 /* UIView+Extensions.swift in Sources */,
 				04D34E2326E19E08001BD8AC /* AppDelegate.swift in Sources */,
 				0404CA6226EE0F6200156973 /* EventCell.swift in Sources */,
@@ -609,6 +640,7 @@
 				04D34E2526E19E08001BD8AC /* SceneDelegate.swift in Sources */,
 				04F8893C26EFF97A0083C1AF /* TimeRemainingStackView.swift in Sources */,
 				04D34E5B26E2EFCF001BD8AC /* AddEventCoordinator.swift in Sources */,
+				044B4AB027072DEF00502C29 /* DeleteEventCoordinator.swift in Sources */,
 				04D34E6626E7B6C6001BD8AC /* UITableViewCell+Extensions.swift in Sources */,
 				04F8892D26EF8AA90083C1AF /* UIImage+Extensions.swift in Sources */,
 				04D34E5526E2E9BF001BD8AC /* EventsListViewModel.swift in Sources */,
